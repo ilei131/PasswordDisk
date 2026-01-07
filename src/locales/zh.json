@@ -74,7 +74,10 @@
     "travel": "旅行",
     "life": "生活",
     "transportation": "交通",
-    "health": "健康"
+    "health": "健康",
+    "creating": "创建中...",
+    "logging_in": "登录中...",
+    "saving": "保存中..."
   },
   "generator": {
     "title": "密码生成器",

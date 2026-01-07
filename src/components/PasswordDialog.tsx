@@ -46,7 +46,7 @@ const PasswordDialog: React.FC<PasswordDialogProps> = ({
         <h3>{isEdit ? t('app.edit_password') : t('app.add_password')}</h3>
         <div className="dialog-content">
           <div className="form-group">
-            <label htmlFor="title">{t('app.title')}</label>
+            <label htmlFor="title">{t('app.title_placeholder')}</label>
             <input
               type="text"
               id="title"

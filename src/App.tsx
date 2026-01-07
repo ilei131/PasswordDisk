@@ -527,7 +527,7 @@ function App() {
                   </div>
                 )}
                 <button type="submit" className="auth-button" disabled={loading}>
-                  {loading ? (isRegistering ? 'Creating...' : 'Logging in...') : (isRegistering ? t('app.register') : t('app.login'))}
+                  {loading ? (isRegistering ? t('app.creating') : t('app.logging_in')) : (isRegistering ? t('app.register') : t('app.login'))}
                 </button>
               </form>
               <div className="auth-toggle">

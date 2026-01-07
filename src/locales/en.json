@@ -68,7 +68,10 @@
     "travel": "Travel",
     "life": "Life",
     "transportation": "Transportation",
-    "health": "Health"
+    "health": "Health",
+    "creating": "Creating...",
+    "logging_in": "Logging in...",
+    "saving": "Saving..."
   },
   "generator": {
     "title": "Password Generator",
