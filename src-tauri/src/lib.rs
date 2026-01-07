@@ -63,7 +63,7 @@ lazy_static! {
     pub static ref VAULT_FILE_PATH: String = {
         // 使用dirs 5.x API
         if let Some(data_dir) = dirs::data_dir() {
-            let mut path = data_dir.join("FileFlower");
+            let mut path = data_dir.join("PasswordDisk");
             path.push("password_vault.json");
             path.to_str()
                 .unwrap_or("/tmp/password_vault.json")
