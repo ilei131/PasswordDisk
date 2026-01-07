@@ -35,10 +35,10 @@ const PasswordGeneratorDialog: React.FC<PasswordGeneratorDialogProps> = ({
   return (
     <div className="dialog-overlay">
       <div className="dialog">
-        <h3>{t('app.password_generator')}</h3>
+        <h3>{t('generator.title')}</h3>
         <div className="dialog-content">
           <div className="form-group">
-            <label htmlFor="password-length">{t('app.length')}: {settings.length}</label>
+            <label htmlFor="password-length">{t('generator.length')}: {settings.length}</label>
             <input
               type="range"
               id="password-length"
@@ -55,7 +55,7 @@ const PasswordGeneratorDialog: React.FC<PasswordGeneratorDialogProps> = ({
                 checked={settings.includeUppercase}
                 onChange={(e) => onSettingsChange('includeUppercase', e.target.checked)}
               />
-              {t('app.include_uppercase')}
+              {t('generator.include_uppercase')}
             </label>
           </div>
           <div className="checkbox-group">
@@ -65,7 +65,7 @@ const PasswordGeneratorDialog: React.FC<PasswordGeneratorDialogProps> = ({
                 checked={settings.includeLowercase}
                 onChange={(e) => onSettingsChange('includeLowercase', e.target.checked)}
               />
-              {t('app.include_lowercase')}
+              {t('generator.include_lowercase')}
             </label>
           </div>
           <div className="checkbox-group">
@@ -75,7 +75,7 @@ const PasswordGeneratorDialog: React.FC<PasswordGeneratorDialogProps> = ({
                 checked={settings.includeNumbers}
                 onChange={(e) => onSettingsChange('includeNumbers', e.target.checked)}
               />
-              {t('app.include_numbers')}
+              {t('generator.include_numbers')}
             </label>
           </div>
           <div className="checkbox-group">
@@ -85,11 +85,11 @@ const PasswordGeneratorDialog: React.FC<PasswordGeneratorDialogProps> = ({
                 checked={settings.includeSymbols}
                 onChange={(e) => onSettingsChange('includeSymbols', e.target.checked)}
               />
-              {t('app.include_symbols')}
+              {t('generator.include_symbols')}
             </label>
           </div>
           <div className="form-group">
-            <label htmlFor="generated-password">{t('app.generated_password')}:</label>
+            <label htmlFor="generated-password">{t('generator.generated_password')}:</label>
             <div className="password-display">
               <input
                 type="text"
@@ -119,13 +119,13 @@ const PasswordGeneratorDialog: React.FC<PasswordGeneratorDialogProps> = ({
             onClick={onGenerate}
             disabled={loading}
           >
-            {t('app.generate_password')}
+            {t('generator.generate')}
           </button>
           <button
             className="dialog-button confirm"
             onClick={onUsePassword}
           >
-            {t('app.use_this_password')}
+            {t('generator.use_this_password')}
           </button>
         </div>
       </div>

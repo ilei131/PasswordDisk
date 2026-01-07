@@ -15,7 +15,6 @@
     "master_password": "主密码",
     "confirm_password": "确认密码",
     "generate_password": "生成密码",
-    "password_generator": "密码生成器",
     "save": "保存",
     "cancel": "取消",
     "delete": "删除",
@@ -58,7 +57,6 @@
     "include_lowercase": "包含小写字母",
     "include_numbers": "包含数字",
     "include_symbols": "包含符号",
-    "generated_password": "生成的密码",
     "use_this_password": "使用此密码",
     "folder": "文件夹",
     "personal": "个人",
@@ -78,7 +76,7 @@
     "transportation": "交通",
     "health": "健康"
   },
-  "password_generator": {
+  "generator": {
     "title": "密码生成器",
     "length": "长度",
     "include_uppercase": "包含大写字母",
@@ -86,7 +84,8 @@
     "include_numbers": "包含数字",
     "include_symbols": "包含符号",
     "generate": "生成",
-    "use_password": "使用此密码"
+    "use_this_password": "使用此密码",
+    "generated_password": "生成的密码"
   },
   "expand": "展开",
   "collapse": "折叠",

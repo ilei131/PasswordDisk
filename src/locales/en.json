@@ -52,13 +52,6 @@
     "category_name": "Category Name",
     "category_icon": "Category Icon",
     "generate": "Generate Password",
-    "length": "Length",
-    "include_uppercase": "Include Uppercase",
-    "include_lowercase": "Include Lowercase",
-    "include_numbers": "Include Numbers",
-    "include_symbols": "Include Symbols",
-    "generated_password": "Generated Password",
-    "use_this_password": "Use This Password",
     "folder": "Folder",
     "personal": "Personal",
     "work": "Work",
@@ -77,7 +70,7 @@
     "transportation": "Transportation",
     "health": "Health"
   },
-  "password_generator": {
+  "generator": {
     "title": "Password Generator",
     "length": "Length",
     "include_uppercase": "Include Uppercase",
@@ -85,7 +78,8 @@
     "include_numbers": "Include Numbers",
     "include_symbols": "Include Symbols",
     "generate": "Generate",
-    "use_password": "Use This Password"
+    "use_this_password": "Use This Password",
+    "generated_password": "Generated Password"
   },
   "expand": "Expand",
   "collapse": "Collapse",
