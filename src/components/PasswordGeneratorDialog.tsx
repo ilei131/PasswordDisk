@@ -29,7 +29,7 @@ const PasswordGeneratorDialog: React.FC<PasswordGeneratorDialogProps> = ({
   onSettingsChange
 }) => {
   const { t } = useI18n();
-  
+
   if (!isOpen) return null;
 
   return (
