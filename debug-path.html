@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h1>路径调试工具</h1>
+    <script>
+        // 测试路径处理逻辑
+        function testPathHandling(path) {
+            console.log('原始路径:', path);
+            
+            // 处理Windows根目录（如C:\）的特殊情况
+            if (path.match(/^[A-Za-z]:\\$/)) {
+                console.log('根目录情况:', [{ name: path, path: path }]);
+                return;
+            }
+
+            // 处理普通路径
+            const parts = path.split('\\');
+            let newPath = '';
+            const items = [];
+
+            for (const [index, part] of parts.entries()) {
+                if (part) {
+                    if (index === 0 && path.startsWith(`${part}\\`)) {
+                        // 这是Windows驱动器根目录
+                        newPath = `${part}\\`;
+                    } else {
+                        newPath = newPath ? `${newPath}${part}` : part;
+                        if (index < parts.length - 1) {
+                            newPath += '\\';
+                        }
+                    }
+                    items.push({ name: part, path: newPath });
+                    console.log(`部分 ${index}:`, part, '新路径:', newPath);
+                }
+            }
+            
+            console.log('最终面包屑项:', items);
+        }
+        
+        // 测试用例
+        console.log('=== 测试用例 1: C:\\ ===');
+        testPathHandling('C:\\');
+        
+        console.log('\n=== 测试用例 2: C:\\Users\\zhanggf ===');
+        testPathHandling('C:\\Users\\zhanggf');
+        
+        console.log('\n=== 测试用例 3: C:\\Users\\zhanggf\\Documents ===');
+        testPathHandling('C:\\Users\\zhanggf\\Documents');
+        
+        // 测试规范化后的路径
+        console.log('\n=== 测试用例 4: 规范化后的路径 C:\\Users\\zhanggf ===');
+        testPathHandling('C:/Users/zhanggf');
+    </script>
+</body>
+</html>
