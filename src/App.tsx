@@ -7,6 +7,7 @@ import { Toast } from './components/Toast';
 import PasswordDialog from './components/PasswordDialog';
 import PasswordGeneratorDialog from './components/PasswordGeneratorDialog';
 import CategoryDialog from './components/CategoryDialog';
+import PasswordItem from './components/PasswordItem';
 import useI18n from './i18n';
 
 // 类型定义
@@ -649,59 +650,15 @@ function App() {
                 {filteredPasswords.map((password) => {
                   const isExpanded = expandedPasswords[password.id] || false;
                   return (
-                    <div key={password.id} className="password-item">
-                      <div className="password-item-header">
-                        <h3>{password.title}</h3>
-                        <div className="password-item-actions">
-                          <button
-                            className="expand-button"
-                            onClick={() => togglePasswordExpanded(password.id)}
-                            aria-label={isExpanded ? '折叠' : '展开'}
-                          >
-                            {isExpanded ? '▼' : '▶'}
-                          </button>
-                          <button className="copy-button" onClick={() => copyPassword(password.password)}>📋</button>
-                          <button className="edit-button" onClick={() => openEditDialog(password)}>✏️</button>
-                          <button className="delete-button" onClick={() => openDeleteDialog(password)}>🗑️</button>
-                        </div>
-                      </div>
-                      <div className="password-item-details">
-                        <div className="detail-row">
-                          <span className="detail-label">{t('app.username')}:</span>
-                          <span className="detail-value">{password.username}</span>
-                        </div>
-                        <div className="detail-row">
-                          <span className="detail-label">{t('app.password')}:</span>
-                          <span className="detail-value password-hidden">••••••••</span>
-                        </div>
-                        {isExpanded && (
-                          <>
-                            {password.url && (
-                              <div className="detail-row">
-                                <span className="detail-label">{t('app.url')}:</span>
-                                <a href={password.url} target="_blank" rel="noopener noreferrer" className="detail-value">
-                                  {password.url}
-                                </a>
-                              </div>
-                            )}
-                            {password.notes && (
-                              <div className="detail-row">
-                                <span className="detail-label">{t('app.notes')}:</span>
-                                <span className="detail-value">{password.notes}</span>
-                              </div>
-                            )}
-                            <div className="detail-row">
-                              <span className="detail-label">{t('app.category')}:</span>
-                              <span className="detail-value">{password.category}</span>
-                            </div>
-                            <div className="detail-row">
-                              <span className="detail-label">{t('app.updated_at')}:</span>
-                              <span className="detail-value">{formatDate(password.updated_at)}</span>
-                            </div>
-                          </>
-                        )}
-                      </div>
-                    </div>
+                    <PasswordItem
+                      key={password.id}
+                      password={password}
+                      isExpanded={isExpanded}
+                      onToggleExpanded={togglePasswordExpanded}
+                      onCopyPassword={copyPassword}
+                      onEdit={openEditDialog}
+                      onDelete={openDeleteDialog}
+                    />
                   );
                 })}
               </div>
