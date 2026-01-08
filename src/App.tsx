@@ -434,11 +434,6 @@ function App() {
     setDeleteDialogOpen(true);
   };
 
-  // 格式化日期
-  const formatDate = (timestamp: number) => {
-    return new Date(timestamp * 1000).toLocaleString();
-  };
-
   // 切换密码项展开状态
   const togglePasswordExpanded = (passwordId: string) => {
     setExpandedPasswords(prev => ({
